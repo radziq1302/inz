@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.radzi.przewodnikmuzealny.log_in"
+    android:orientation="vertical"
+    >
+
+    <Button
+
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="@string/login"
+        android:layout_marginTop="140dp"
+        android:layout_marginBottom="20dp"
+        android:layout_gravity="center"/>
+
+    <Button
+        android:id="@+id/button7"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="@string/register"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="10dp"
+        android:layout_gravity="center"/>
+
+    <TextView
+        android:layout_marginTop="50dp"
+        android:textAlignment="center"
+        android:textSize="14sp"
+        android:paddingBottom="80dp"
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:text="@string/rules" />
+
+</LinearLayout>
