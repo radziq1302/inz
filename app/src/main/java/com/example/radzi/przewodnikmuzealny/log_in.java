@@ -1,5 +1,6 @@
 package com.example.radzi.przewodnikmuzealny;
 
+import android.app.DialogFragment;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -22,12 +23,33 @@ public class log_in extends AppCompatActivity {
                 startActivity(new Intent(log_in.this,PopR.class));
             }
         });
-        login.setOnClickListener( new View.OnClickListener(){
+        //Intent a = new Intent();
+
+       /* View.OnClickListener x = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        };*/
+        //login.setOnClickListener();
+        /*login.setOnClickListener( new View.OnClickListener(){
 
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(log_in.this,Pop.class));
+                //startActivity(new Intent(log_in.this,Pop.class));
+                startActivity(new Intent(log_in.this,));
             }
-        });
+        });*/
+        //JAK zrobić jeden showdialog do
+    }
+
+    public void showDialog(View v) {
+
+        DialogFragment abc = new FireMissilesDialogFragment();
+        //abc.show(getSupportFragmentManager(),"my_dialog_tag");
+        android.support.v4.app.FragmentManager x = this.getSupportFragmentManager();
+        abc.show(this.getFragmentManager(),"sda");
+
+
     }
 }

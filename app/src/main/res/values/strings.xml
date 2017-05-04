@@ -7,6 +7,6 @@
     <string name="send_register">Wyślij</string>
     <string name="signin">zaloguj</string>
     <string name="password">haslo</string>
-    <string name="cancel">zaloguj</string>
+    <string name="cancel">Anuluj</string>
 
 </resources>
