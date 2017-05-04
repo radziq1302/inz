@@ -17,12 +17,7 @@ public class log_in extends AppCompatActivity {
         Button login = (Button) findViewById(R.id.button);
         Button register = (Button) findViewById(R.id.button7);
 
-        register.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(log_in.this,PopR.class));
-            }
-        });
+
         //Intent a = new Intent();
 
        /* View.OnClickListener x = new View.OnClickListener() {
@@ -32,23 +27,27 @@ public class log_in extends AppCompatActivity {
             }
         };*/
         //login.setOnClickListener();
-        /*login.setOnClickListener( new View.OnClickListener(){
 
-            @Override
-            public void onClick(View v) {
-                //startActivity(new Intent(log_in.this,Pop.class));
-                startActivity(new Intent(log_in.this,));
-            }
-        });*/
+
+
         //JAK zrobić jeden showdialog do
     }
 
     public void showDialog(View v) {
 
-        DialogFragment abc = new FireMissilesDialogFragment();
+        DialogFragment abc = new FireMissilesDialogFragment(R.layout.pop_login);
         //abc.show(getSupportFragmentManager(),"my_dialog_tag");
         android.support.v4.app.FragmentManager x = this.getSupportFragmentManager();
         abc.show(this.getFragmentManager(),"sda");
+
+
+    }
+    public void showDialog1(View v) {
+
+        DialogFragment abc = new FireMissilesDialogFragment(R.layout.pop_register);
+        //abc.show(getSupportFragmentManager(),"my_dialog_tag");
+        android.support.v4.app.FragmentManager x = this.getSupportFragmentManager();
+        abc.show(this.getFragmentManager(),"sdaa");
 
 
     }

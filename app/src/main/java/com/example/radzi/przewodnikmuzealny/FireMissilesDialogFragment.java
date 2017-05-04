@@ -13,6 +13,10 @@ import android.view.LayoutInflater;
  */
 
 public class FireMissilesDialogFragment extends DialogFragment {
+    private final int lay_arg;
+    FireMissilesDialogFragment (int larg) {
+        this.lay_arg = larg;
+    }
     //@Override
    /* public Dialog onCreateDialog(Bundle savedInstanceState) {
         // Use the Builder class for convenient dialog construction
@@ -42,7 +46,7 @@ public class FireMissilesDialogFragment extends DialogFragment {
 
         // Inflate and set the layout for the dialog
         // Pass null as the parent view because its going in the dialog layout
-        builder.setView(inflater.inflate(R.layout.pop_login, null))
+        builder.setView(inflater.inflate(lay_arg, null))
                 // Add action buttons
                 .setPositiveButton(R.string.signin, new DialogInterface.OnClickListener() {
                     @Override

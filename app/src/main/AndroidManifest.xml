@@ -24,14 +24,6 @@
         <activity android:name=".log_in"
             android:theme="@style/AppTheme"
             ></activity>
-        <activity android:name=".Pop"
-            android:theme="@style/popUpowy"
-
-            />
-        <activity android:name=".PopR"
-            android:theme="@style/popUpowy"
-
-            />
     </application>
 
 </manifest>
