@@ -14,16 +14,14 @@ import java.util.Map;
  */
 
 
-public class RegisterReq extends StringRequest {
-    private static final String reg_req_url = "http://tomeczki.000webhostapp.com/Register.php";
+public class LoginReq extends StringRequest {
+    private static final String log_req_url = "http://tomeczki.000webhostapp.com/Login.php";
     private Map<String, String> params;
     //RegisterReq (int id, String name, String surname, String password, int age, int education, String Login, Response.Listener<String> listener) {
-        RegisterReq (String name, String username, int age, String password, Response.Listener<String> listener) {
-        super(Method.POST, reg_req_url, listener, null);
+    LoginReq (String username,  String password, Response.Listener<String> listener) {
+        super(Method.POST, log_req_url, listener, null);
         params = new HashMap<>();
-        params.put("name", name);
         params.put("username", username);
-        params.put("age", age + "");
         params.put("password", password);
 
         //params.put("login", Login);

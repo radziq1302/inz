@@ -3,10 +3,11 @@
     <string name="welcome">Przewodnik muzealny</string>
     <string name="rules">Regulamin świadczenia usług</string>
     <string name="login">Zaloguj</string>
-<string name="register">Zarejestruj</string>
+    <string name="register">Zarejestruj</string>
     <string name="send_register">Wyślij</string>
     <string name="signin">zaloguj</string>
     <string name="password">haslo</string>
     <string name="cancel">Anuluj</string>
+    <string name="send_login">zaloguj</string>
 
 </resources>
