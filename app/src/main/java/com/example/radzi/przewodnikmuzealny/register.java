@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -42,6 +43,8 @@ public class register extends AppCompatActivity {
                 final String username = reg_email.getText().toString();
                 final String password = reg_pwd.getText().toString();
                 final int age = Integer.parseInt(reg_age.getText().toString());
+                final String ageS = reg_age.getText().toString();
+
                 Response.Listener<String> responseListenerr = new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {

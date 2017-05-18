@@ -29,18 +29,9 @@
         android:id="@+id/log_psw"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
         android:ems="10"
+        android:layout_weight="1"
         android:inputType="textPersonName"
         android:text="Name" />
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="274dp"
-        android:layout_height="212dp"
-        android:cropToPadding="true"
-        android:padding="32dp"
-        app:srcCompat="@drawable/map"
-        tools:layout_editor_absoluteX="157dp"
-        tools:layout_editor_absoluteY="229dp" />
 </LinearLayout>

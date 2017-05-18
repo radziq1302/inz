@@ -49,16 +49,32 @@ public class login extends AppCompatActivity {
                             if (success){
                                 String name = jsonobj.getString("name");
                                 int age = jsonobj.getInt("age");
+                                int kwestionariusz = jsonobj.getInt("kwestionariusz");
 
-                                Intent intent = new Intent(login.this, postLog.class);
-                                intent.putExtra("name", name);
-                                intent.putExtra("username", username);
-                                intent.putExtra("age", age);
-                                login.this.startActivity(intent);
+                                if (kwestionariusz == 0) {
+                                    Intent intent = new Intent(login.this, postLog.class);
+                                    intent.putExtra("name", name);
+                                    intent.putExtra("username", username);
+                                    intent.putExtra("age", age);
+                                    intent.putExtra("kwestionariusz", kwestionariusz);
+                                    login.this.startActivity(intent);
 
-                                Context context = getApplicationContext();
-                                Toast ab = Toast.makeText(context, "niezle, wyslales",Toast.LENGTH_SHORT);
-                                ab.show();
+                                    Context context = getApplicationContext();
+                                    Toast ab = Toast.makeText(context, "niezle, wyslales", Toast.LENGTH_SHORT);
+                                    ab.show();
+                                }
+                                else {
+                                    Intent intent = new Intent(login.this, postLog.class);
+                                    intent.putExtra("name", name);
+                                    intent.putExtra("username", username);
+                                    intent.putExtra("age", age);
+                                    intent.putExtra("kwestionariusz", kwestionariusz);
+                                    login.this.startActivity(intent);
+
+                                    Context context = getApplicationContext();
+                                    Toast ab = Toast.makeText(context, "niezle, wyslales i masz kwestionariusz", Toast.LENGTH_SHORT);
+                                    ab.show();
+                                }
                             }
                             else {
                                 AlertDialog.Builder builder = new AlertDialog.Builder(login.this);
