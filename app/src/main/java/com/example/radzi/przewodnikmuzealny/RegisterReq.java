@@ -15,7 +15,7 @@ import java.util.Map;
 
 
 public class RegisterReq extends StringRequest {
-    private static final String reg_req_url = "http://tomeczki.000webhostapp.com/Register.php";
+    private static final String reg_req_url = "http://tomeczki.000webhostapp.com/Register69.php";
     private Map<String, String> params;
     //RegisterReq (int id, String name, String surname, String password, int age, int education, String Login, Response.Listener<String> listener) {
         RegisterReq (String name, String username, int age, String password, Response.Listener<String> listener) {

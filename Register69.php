@@ -11,7 +11,7 @@
 	
 	function registerUser() {
     global $con, $name, $age, $username, $password;
-    $statement = mysqli_prepare($con, "INSERT INTO user (name, username, age, password, kwestionariusz) VALUES (?, ?, ?, ?, '1')");
+    $statement = mysqli_prepare($con, "INSERT INTO user (name, username, age, password, kwestionariusz) VALUES (?, ?, ?, ?, '0')");
     mysqli_stmt_bind_param($statement, "ssis", $name, $username, $age, $password);
     mysqli_stmt_execute($statement);
 	

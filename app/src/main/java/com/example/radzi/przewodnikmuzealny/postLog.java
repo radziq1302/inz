@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -12,12 +13,18 @@ import android.widget.Toast;
 import org.w3c.dom.Text;
 
 public class postLog extends AppCompatActivity {
-    final boolean newbe = true;
+    boolean newbe = true;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        if (newbe)
+        Intent intent = getIntent();
+        String name = intent.getStringExtra("name");
+        String username = intent.getStringExtra("username");
+        int age = intent.getIntExtra("age", -1);
+        int kwestionariusz = intent.getIntExtra("kwestionariusz", -1);
+        boolean newbe1 = (kwestionariusz != 0);
+        Log.v("wyswietl, no mi tu", Boolean.toString(newbe1));
+        if (newbe1)
         setContentView(R.layout.activity_post_log);
         else
             setContentView(R.layout.activity_main);
@@ -28,13 +35,13 @@ public class postLog extends AppCompatActivity {
         //final TextView welcomeMessage = (TextView) findViewById(R.id.log_psw);
         //final Button log_btn = (Button) findViewById(R.id.btnLogin);
 
-        Intent intent = getIntent();
+        /*Intent intent = getIntent();
         String name = intent.getStringExtra("name");
         String username = intent.getStringExtra("username");
         int age = intent.getIntExtra("age", -1);
-        int kwestionariusz = intent.getIntExtra("kwestionariusz", -1);
+        int kwestionariusz = intent.getIntExtra("kwestionariusz", -1);*/
 
-        String message = name + "siemka zioomq";
+        String message = name + " siemka zioomq";
         Context context = getApplicationContext();
         Toast ab = Toast.makeText(context, message,Toast.LENGTH_LONG);
         ab.show();

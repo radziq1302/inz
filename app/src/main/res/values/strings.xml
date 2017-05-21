@@ -9,5 +9,6 @@
     <string name="password">haslo</string>
     <string name="cancel">Anuluj</string>
     <string name="send_login">zaloguj</string>
+    <string name="button_camera">Shot</string>
 
 </resources>
