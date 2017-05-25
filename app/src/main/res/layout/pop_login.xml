@@ -5,7 +5,7 @@
     android:background="#6fc7b8">
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/register_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -22,9 +22,9 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:text=""
-        android:layout_alignBottom="@+id/editText"
-        android:layout_alignLeft="@+id/editText"
-        android:layout_alignStart="@+id/editText"
+        android:layout_alignBottom="@+id/register_email"
+        android:layout_alignLeft="@+id/register_email"
+        android:layout_alignStart="@+id/register_email"
         android:layout_marginBottom="77dp"
         android:hint="login"/>
 
@@ -39,8 +39,8 @@
 </RelativeLayout>-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:background="#6fc7b8">
     <!--<ImageView
         android:src="@drawable/header_logo"
@@ -50,7 +50,7 @@
         android:background="#FFFFBB33"
         android:contentDescription="@string/app_name" />-->
     <EditText
-        android:id="@+id/username"
+        android:id="@+id/login_username"
         android:inputType="textEmailAddress"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -60,7 +60,7 @@
         android:layout_marginBottom="4dp"
         android:hint="@string/login" />
     <EditText
-        android:id="@+id/password"
+        android:id="@+id/login_password"
         android:inputType="textPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -70,4 +70,13 @@
         android:layout_marginBottom="16dp"
         android:fontFamily="sans-serif"
         android:hint="@string/password"/>
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/send_login"
+        android:layout_marginBottom="179dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"/>
 </LinearLayout>
