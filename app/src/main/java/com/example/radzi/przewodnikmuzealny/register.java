@@ -29,8 +29,7 @@ public class register extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pop_register);
-        final TextView log_login = (TextView) findViewById(R.id.login_username);
-        final TextView log_pwd = (TextView) findViewById(R.id.login_password);
+
         final TextView reg_login = (TextView) findViewById(R.id.register_login);
         final TextView reg_pwd = (TextView) findViewById(R.id.register_password);
         final TextView reg_email = (TextView) findViewById(R.id.register_email);
@@ -43,7 +42,6 @@ public class register extends AppCompatActivity {
                 final String username = reg_email.getText().toString();
                 final String password = reg_pwd.getText().toString();
                 final int age = Integer.parseInt(reg_age.getText().toString());
-                final String ageS = reg_age.getText().toString();
 
                 Response.Listener<String> responseListenerr = new Response.Listener<String>() {
                     @Override

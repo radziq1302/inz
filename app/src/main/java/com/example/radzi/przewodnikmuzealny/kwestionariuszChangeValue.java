@@ -17,7 +17,6 @@ public class kwestionariuszChangeValue extends StringRequest {
         super(Method.POST, reg_req_url, listener, null);
         params = new HashMap<>();
         params.put("username", username);
-
         params.put("password", password);
         params.put("kwestionariusz", 1 + "");
 
@@ -27,10 +26,7 @@ public class kwestionariuszChangeValue extends StringRequest {
     public Map<String, String> getParams() {
         return params;
     }
-    //RegisterReq (int id, String name, String surname, String password, int age, int education, String Login, Response.Listener<String> listener) {
-
     }
-
 
 
 

@@ -22,9 +22,9 @@ public class postLog extends AppCompatActivity {
         String username = intent.getStringExtra("username");
         int age = intent.getIntExtra("age", -1);
         int kwestionariusz = intent.getIntExtra("kwestionariusz", -1);
-        boolean newbe1 = (kwestionariusz != 0);
-        Log.v("wyswietl, no mi tu", Boolean.toString(newbe1));
-        if (newbe1)
+        //boolean newbe1 = (kwestionariusz != 0);
+        Log.v("wyswietl, no mi tu", Boolean.toString(newbe));
+        if (newbe)
         setContentView(R.layout.activity_post_log);
         else
             setContentView(R.layout.activity_main);

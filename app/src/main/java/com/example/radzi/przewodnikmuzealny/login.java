@@ -9,7 +9,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
@@ -53,43 +52,18 @@ public class login extends AppCompatActivity {
                                 int kwestionariusz = jsonobj.getInt("kwestionariusz");
 
                                 if (kwestionariusz == 0) {
-                                    //Intent intent = new Intent(login.this, postLog.class);
-                                    Intent intent = new Intent(login.this, action.class);
+                                    Intent intent = new Intent(login.this, kwestionariusz.class);
+                                    //Intent intent = new Intent(login.this, kwestionariusz.class);
                                     intent.putExtra("name", name);
                                     intent.putExtra("username", username);
-                                    intent.putExtra("age", age);
+                                    intent.putExtra("password", password);
                                     intent.putExtra("kwestionariusz", kwestionariusz);
                                     login.this.startActivity(intent);
 
                                     Context context = getApplicationContext();
                                     Toast ab = Toast.makeText(context, "niezle, wyslales", Toast.LENGTH_SHORT);
                                     ab.show();
-                                    /*btn_kwestionariusz.setOnClickListener(new View.OnClickListener() {
-                                        @Override
-                                        public void onClick(View v) {
-                                            Response.Listener<String> kwestionariuszRListener = new Response.Listener<String>() {
-                                                @Override
-                                                public void onResponse(String response) {
-                                                    try {
 
-                                                        JSONObject jsonobj = new JSONObject(response);
-                                                        boolean success = jsonobj.getBoolean("success");
-                                                        if (success) {
-                                                            jsonobj.put("kwestionariusz", 1);
-                                                            //jsonobj.getInt("kwestionariusz");
-                                                        }
-
-                                                    } catch (JSONException e1) {
-                                                        e1.printStackTrace();
-                                                    }
-
-                                                }
-                                            };
-                                            kwestionariuszChangeValue kwest = new kwestionariuszChangeValue(username, password, kwestionariuszRListener);
-                                            RequestQueue queue = Volley.newRequestQueue(login.this);
-                                            queue.add(kwest);
-                                        }
-                                    });*/
 
                                 }
                                 else {

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    tools:context="com.example.radzi.przewodnikmuzealny.action"
+    tools:context="com.example.radzi.przewodnikmuzealny.action_do_wyrzucenia"
     android:orientation="vertical"
 
     >
