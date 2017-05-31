@@ -67,7 +67,7 @@ public class login extends AppCompatActivity {
 
                                 }
                                 else {
-                                    Intent intent = new Intent(login.this, postLog.class);
+                                    Intent intent = new Intent(login.this, postLogExChoice.class);
                                     intent.putExtra("name", name);
                                     intent.putExtra("username", username);
                                     intent.putExtra("age", age);

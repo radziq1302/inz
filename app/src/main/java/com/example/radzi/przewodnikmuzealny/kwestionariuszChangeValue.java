@@ -18,7 +18,7 @@ public class kwestionariuszChangeValue extends StringRequest {
         params = new HashMap<>();
         params.put("username", username);
         params.put("password", password);
-        params.put("kwestionariusz", 1 + "");
+        params.put("kwestionariusz", 0 + "");
 
 
     }

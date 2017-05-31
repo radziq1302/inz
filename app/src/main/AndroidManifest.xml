@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.radzi.przewodnikmuzealny">
+    package="com.example.radzi.przewodnikmuzealny"
+    android:name=".java_singleton" >
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CAMERA" />
@@ -55,8 +56,9 @@
             android:name=".FireMissilesDialogFragment"
             android:theme="@style/AppTheme" />
         <activity android:name=".postLog" />
-        <activity android:name=".action_do_wyrzucenia" />
         <activity android:name=".kwestionariusz"></activity>
+        <activity android:name=".postLogExChoice"></activity>
+
     </application>
 
 </manifest>
