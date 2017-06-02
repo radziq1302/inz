@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.view.View.OnClickListener;
 
 import java.util.ArrayList;
 
@@ -17,13 +18,17 @@ public class mAdapter extends RecyclerView.Adapter<mAdapter.NumberViewHolder> {
     private static final String TAG = mAdapter.class.getSimpleName();
 
     private int mNumberItems; // ile widokow jest dozwolone
+    final private listItemClickListener mOnClickListener;
     private ArrayList<postLogExChoice.placowka> karmie_recyclerview = new ArrayList<>();
-
+    public interface listItemClickListener {
+        void onListItemClick (int clickedItemIndex);
+    }
 
     // konstruktor !!!!!!!!!!!!!!!!!!!!!!!!!!!
-    public mAdapter (ArrayList<postLogExChoice.placowka> number){
+    public mAdapter (ArrayList<postLogExChoice.placowka> number, listItemClickListener listener){
         //mNumberItems = number;
         karmie_recyclerview = number;
+        mOnClickListener = listener;
     }
     @Override
     public NumberViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
@@ -51,15 +56,22 @@ public class mAdapter extends RecyclerView.Adapter<mAdapter.NumberViewHolder> {
     }
 
 
-    class NumberViewHolder extends RecyclerView.ViewHolder {
+    class NumberViewHolder extends RecyclerView.ViewHolder implements OnClickListener {
         TextView element_listy;
         public NumberViewHolder(View itemView) {
             super(itemView);
             element_listy = (TextView) itemView.findViewById(R.id.ex_textview);
+            itemView.setOnClickListener(this);
 
         }
         void bind(int listIndex) {
             element_listy.setText(String.valueOf(listIndex));
+        }
+
+        @Override
+        public void onClick(View v) {
+            int clickedPosition = getAdapterPosition();
+            mOnClickListener.onListItemClick(clickedPosition);
         }
     }
 }

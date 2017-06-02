@@ -58,6 +58,7 @@
         <activity android:name=".postLog" />
         <activity android:name=".kwestionariusz"></activity>
         <activity android:name=".postLogExChoice"></activity>
+        <activity android:name=".msn"></activity>
 
     </application>
 

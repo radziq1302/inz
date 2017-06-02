@@ -15,9 +15,11 @@ import android.widget.Toast;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 
-public class postLogExChoice extends AppCompatActivity {
+public class postLogExChoice extends AppCompatActivity implements mAdapter.listItemClickListener{
     private static final int NUM_LIST_ITEM = 100;
     private mAdapter madapter;
+
+    private Toast toast;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,7 +38,7 @@ public class postLogExChoice extends AppCompatActivity {
         for (int i=0; i<2; i++)
             lista_miejsc.add(new placowka(i));
 
-        madapter = new mAdapter(lista_miejsc);
+        madapter = new mAdapter(lista_miejsc, this);
         recyclerView.setAdapter(madapter);
 
 
@@ -62,18 +64,47 @@ public class postLogExChoice extends AppCompatActivity {
         //welcomeMessage.setText(message);
 
     }
+
+    @Override
+    public void onListItemClick(int clickedItemIndex) {
+        if (toast!=null){
+            toast.cancel();
+        }
+        String toastMessage = "Item #" + clickedItemIndex + " clcked.";
+        toast = Toast.makeText(this, toastMessage, Toast.LENGTH_LONG);
+        toast.show();
+        String klasa;
+        switch (clickedItemIndex) {
+            case 0: {klasa="msn";             Intent intent = new Intent(postLogExChoice.this, msn.class);
+                postLogExChoice.this.startActivity(intent);}
+           /* case 1: klasa="tbc";Intent intent2 = new Intent(postLogExChoice.this, tbc.class);
+                postLogExChoice.this.startActivity(intent2);*/
+
+        }
+
+
+
+
+    }
+
     public class placowka {
         private String placowka_nazwa;
+        private String placowka_klasa;
         private int licznik = 0;
         private String[] placowka_lista= {"Muzeum Sztuki Współczesnej w Warszawie", "Wkrótce"};
+        private String[] placowka_lista_klas= {"msn", "tbc"};
         public placowka(int i){
 
                 placowka_nazwa = placowka_lista[i];
+                placowka_klasa = placowka_lista_klas[i];
                 licznik++;
 
         }
         public String getNazwa() {
             return placowka_nazwa;
+        }
+        public String getNazwaClasy() {
+            return placowka_klasa;
         }
     }
 }
