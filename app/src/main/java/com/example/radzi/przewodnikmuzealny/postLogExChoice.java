@@ -75,7 +75,7 @@ public class postLogExChoice extends AppCompatActivity implements mAdapter.listI
         toast.show();
         String klasa;
         switch (clickedItemIndex) {
-            case 0: {klasa="msn";             Intent intent = new Intent(postLogExChoice.this, msn.class);
+            case 0: {klasa="msn";             Intent intent = new Intent(postLogExChoice.this, com.mchtr.Przewodnix.UnityPlayerNativeActivity.class);//msn.class);
                 postLogExChoice.this.startActivity(intent);}
            /* case 1: klasa="tbc";Intent intent2 = new Intent(postLogExChoice.this, tbc.class);
                 postLogExChoice.this.startActivity(intent2);*/
