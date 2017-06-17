@@ -4,6 +4,9 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.SQLException;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -15,6 +18,9 @@ import android.widget.Toast;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
+import com.example.radzi.przewodnikmuzealny.data.dbAdapter;
+import com.example.radzi.przewodnikmuzealny.data.dbContract;
+import com.example.radzi.przewodnikmuzealny.data.dbHelper;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -24,9 +30,14 @@ public class kwestionariusz extends AppCompatActivity {
     int q2;
     int q3;
     int suma_pkt=0;
+    SQLiteDatabase mDb;
+    Cursor cursor = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
+
 
         Intent intent = getIntent();
         final String username = intent.getStringExtra("username");
@@ -89,7 +100,18 @@ public class kwestionariusz extends AppCompatActivity {
 
                     };
                 if (!("".equals(tmp1.getText().toString()))&&!("".equals(tmp2.getText().toString()))&&!("".equals(tmp3.getText().toString()))&&!("".equals(tmp4.getText().toString())) ){
-                    kwestionariuszChangeValue kwestionariuszRequest = new kwestionariuszChangeValue(username, password, kwestionariusz_change_value);
+                    kwestionariuszChangeValue kwestionariuszRequest = new kwestionariuszChangeValue(username, password, java_singleton.summa, kwestionariusz_change_value);
+                    dbAdapter mDbHelper = new dbAdapter(getApplicationContext());
+                    mDbHelper.createDatabase();
+                    mDbHelper.open();
+
+                    Cursor testdata = mDbHelper.getTestData();
+
+                    mDbHelper.close();
+                    String kaput = testdata.getColumnName(2);
+
+                    Log.e("costam kolumny ktorejs",kaput);
+
                     RequestQueue queue = Volley.newRequestQueue(kwestionariusz.this);
                     queue.add(kwestionariuszRequest);
                 }

@@ -9,16 +9,16 @@ import java.util.Map;
  */
 
 public class kwestionariuszChangeValue extends StringRequest {
-        private static final String reg_req_url = "http://tomeczki.000webhostapp.com/kwestionariuszChangeValue.php";
+        private static final String reg_req_url = "http://tomeczki.000webhostapp.com/kwestionariuszChangeValue1.php";
         private Map<String, String> params;
 
 
-    kwestionariuszChangeValue (String username,  String password, Response.Listener<String> listener) {
+    kwestionariuszChangeValue (String username,  String password, int kwestionariusz, Response.Listener<String> listener) {
         super(Method.POST, reg_req_url, listener, null);
         params = new HashMap<>();
         params.put("username", username);
         params.put("password", password);
-        params.put("kwestionariusz", 0 + "");
+        params.put("kwestionariusz", kwestionariusz+"");
 
 
     }
