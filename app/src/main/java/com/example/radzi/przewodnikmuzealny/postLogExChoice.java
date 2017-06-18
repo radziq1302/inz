@@ -8,6 +8,9 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -45,6 +48,10 @@ public class postLogExChoice extends AppCompatActivity implements mAdapter.listI
         final TextView log_login = (TextView) findViewById(R.id.log_usrnm);
         final EditText log_pwd = (EditText) findViewById(R.id.log_psw);
         final EditText log_kwest = (EditText) findViewById(R.id.editText);
+
+        Context context = getApplicationContext();
+        Toast abd = Toast.makeText(context, "tunak"+ java_singleton.remember, Toast.LENGTH_SHORT);
+        abd.show();
         //final TextView welcomeMessage = (TextView) findViewById(R.id.log_psw);
         //final Button log_btn = (Button) findViewById(R.id.btnLogin);
 
@@ -63,6 +70,24 @@ public class postLogExChoice extends AppCompatActivity implements mAdapter.listI
         log_kwest.setText(kwestionariusz+"");*/
         //welcomeMessage.setText(message);
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.activity_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem elemencik) {
+        int mId = elemencik.getItemId();
+        if (mId == R.id.settings)
+        {   Intent startSetts = new Intent(this, settingsActivity.class);
+            startActivity(startSetts);
+            return true;
+        }
+        return super.onOptionsItemSelected(elemencik);
     }
 
     @Override

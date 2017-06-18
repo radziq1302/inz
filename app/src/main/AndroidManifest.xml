@@ -48,6 +48,16 @@
         <activity
             android:name=".login"
             android:theme="@style/AppTheme" />
+        <activity
+            android:name=".settingsActivity"
+            android:label="@string/setts"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar"
+            android:parentActivityName=".postLogExChoice"
+           >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".postLogExChoice"/>
+        </activity>
         <!--
             <activity android:name=".RegisterReq"
             android:theme="@style/AppTheme"
@@ -69,7 +79,9 @@
         </activity>
 
         <activity android:name=".kwestionariusz"></activity>
-        <activity android:name=".postLogExChoice"></activity>
+        <activity android:name=".postLogExChoice"
+
+            android:launchMode="singleTop"></activity>
         <activity android:name=".msn"></activity>
         <!--
                     To support devices using the TI S3D library for stereo mode we must

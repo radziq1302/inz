@@ -1,6 +1,7 @@
 package com.example.radzi.przewodnikmuzealny;
 
 import android.app.Application;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 
 /**
@@ -16,6 +17,8 @@ public class java_singleton extends Application {
         public static int summa;
         public static int tryb_zwiedzania;
         public static Cursor cursor;
+        public static SharedPreferences share;
+        static boolean remember = false;
 
         public static java_singleton getInstance() {
             return singleton;

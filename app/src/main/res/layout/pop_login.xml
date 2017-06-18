@@ -70,6 +70,13 @@
         android:layout_marginBottom="16dp"
         android:fontFamily="sans-serif"
         android:hint="@string/password"/>
+
+    <CheckBox
+        android:id="@+id/checkbox_remember"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Pamiętaj mnie" />
+
     <Button
         android:id="@+id/btnLogin"
         android:layout_width="wrap_content"
