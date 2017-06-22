@@ -27,6 +27,23 @@ public class UnityPlayerActivity extends Activity
         mUnityPlayer = new UnityPlayer(this);
         setContentView(mUnityPlayer);
         mUnityPlayer.requestFocus();
+        //mUnityPlayer.UnitySendMessage("word","nazwa_funkcji",string z db);
+
+        /*trzeba przeslac wynik formularza
+        *
+        * w c# ----->
+        *int x = 0;
+
+if (Int32.TryParse(TextBoxD1.Text, out x))
+{
+    // you know that the parsing attempt
+    // was successful
+}
+
+lub int x = Int32.Parse(TextBoxD1.Text);
+        *
+        *
+        * */
     }
 
     @Override protected void onNewIntent(Intent intent)
