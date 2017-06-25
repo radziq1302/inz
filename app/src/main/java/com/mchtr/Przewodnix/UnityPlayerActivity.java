@@ -3,6 +3,7 @@ package com.mchtr.Przewodnix;
 import com.unity3d.player.*;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
 import android.graphics.PixelFormat;
 import android.os.Bundle;
@@ -12,6 +13,8 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
+import static android.R.attr.screenOrientation;
+
 public class UnityPlayerActivity extends Activity
 {
     protected UnityPlayer mUnityPlayer; // don't change the name of this variable; referenced from native code
@@ -19,8 +22,14 @@ public class UnityPlayerActivity extends Activity
     // Setup activity layout
     @Override protected void onCreate (Bundle savedInstanceState)
     {
+        mUnityPlayer.UnitySendMessage("virt","ReceiveJavaMessage2", "TygrysTest");
+        ReceiveJavaMessage ("virt","ReceiveJavaMessage", "TygrysTest");
+        String xwe = "50";
+        int xwee = 50;
+        xwd(xwe);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         super.onCreate(savedInstanceState);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 
         getWindow().setFormat(PixelFormat.RGBX_8888); // <--- This makes xperia play happy
 
@@ -44,8 +53,17 @@ lub int x = Int32.Parse(TextBoxD1.Text);
         *
         *
         * */
-    }
 
+    }
+    static String xwd (String xwe) {
+    //xwe = 50;
+    return xwe;
+    }
+    static void ReceiveJavaMessage (String a, String b, String c) {
+        //mUnityPlayer.UnitySendMessage("Virtualny","ReceiveJavaMessage2", "TygrysTest");
+
+
+    }
     @Override protected void onNewIntent(Intent intent)
     {
         // To support deep linking, we need to make sure that the client can get access to
