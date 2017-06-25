@@ -27,11 +27,12 @@ import org.json.JSONObject;
 
 public class kwestionariusz extends AppCompatActivity {
     int q1=0;
-    int q2;
-    int q3;
-    int suma_pkt=0;
+    int q2=0;
+    int q3=0;
+    static int suma_pkt=0;
     SQLiteDatabase mDb;
     Cursor cursor = null;
+    autolog akcja;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,7 +44,7 @@ public class kwestionariusz extends AppCompatActivity {
         final String username = intent.getStringExtra("username");
         final String password = intent.getStringExtra("password");
 
-
+        akcja = new autolog(this);
 
         setContentView(R.layout.activity_kwestionariusz);
         final EditText tmp1 = (EditText) findViewById(R.id.tmp_1);
@@ -86,6 +87,7 @@ public class kwestionariusz extends AppCompatActivity {
 
                                 Log.i("sumka", "wartosc = " + suma_pkt);
                                 Log.i("summa", "MM_wartosc = " + java_singleton.summa);
+                                akcja.setRes(java_singleton.summa);
                                 Intent intent = new Intent(kwestionariusz.this, postLogExChoice.class);
                                 //// tutaj dać summę
                                 intent.putExtra("suma punktow", suma_pkt);
@@ -136,12 +138,12 @@ public class kwestionariusz extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int which) {
 
                         tmp1.setText(wyksztalcenie[which]);
-                        switch (wyksztalcenie[which].toString()) {
-                            case "podstawowe": q1=0;
-                            case "średnie": q1=1;
-                            case "wyższe techniczne": q1=2;
-                            case "wyższe artystyczne": q1=4;
-                            case "wyższe humanistyczne": q1=3;
+                        switch (which) {
+                            case 0: q1=0; break;
+                            case 1: q1=1; break;
+                            case 2: q1=2; break;
+                            case 3: q1=4; break;
+                            case 4: q1=3; break;
                         }
                     }
                 });
@@ -162,10 +164,10 @@ public class kwestionariusz extends AppCompatActivity {
 
                         tmp2.setText(odwiedziny[which]);
                         switch (odwiedziny[which].toString()) {
-                            case "mniej niż raz w roku": q3=0;
-                            case "raz w roku": q3=1;
-                            case "2 - 3 razy w roku": q3=2;
-                            case "częściej": q3=4;
+                            case "mniej niż raz w roku": q3=0; break;
+                            case "raz w roku": q3=1; break;
+                            case "2 - 3 razy w roku": q3=2; break;
+                            case "częściej": q3=4; break;
 
                         }
                     }
@@ -187,9 +189,9 @@ public class kwestionariusz extends AppCompatActivity {
 
                         tmp3.setText(wiedza[which]);
                         switch (wiedza[which].toString()) {
-                            case "mala": q2=0;
-                            case "przeciętna": q2=1;
-                            case "ponadprzeciętna": q2=4;
+                            case "mala": q2=0; break;
+                            case "przeciętna": q2=1; break;
+                            case "ponadprzeciętna": q2=4; break;
 
 
                         }
@@ -211,9 +213,9 @@ public class kwestionariusz extends AppCompatActivity {
 
                         tmp4.setText(tryb[which]);
                         switch (tryb[which].toString()) {
-                            case "szybki": java_singleton.tryb_zwiedzania=1;
-                            case "spacerowicz": java_singleton.tryb_zwiedzania=0;
-                            case "spokojny": java_singleton.tryb_zwiedzania=2;
+                            case "szybki": java_singleton.tryb_zwiedzania=1; break;
+                            case "spacerowicz": java_singleton.tryb_zwiedzania=0; break;
+                            case "spokojny": java_singleton.tryb_zwiedzania=2; break;
 
 
                         }

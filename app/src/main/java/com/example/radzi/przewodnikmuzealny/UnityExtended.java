@@ -15,11 +15,16 @@ import com.unity3d.player.UnityPlayerActivity;
 
 public class UnityExtended extends UnityPlayerActivity {
     public static Context context;
+    autolog akcja;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+        akcja = new autolog(this);
+        Integer sum = akcja.sumOfQuestionnaire();
+        //java_singleton.summa;
+        String tygrys = sum.toString();
         super.onCreate(savedInstanceState);
-        UnityPlayer.UnitySendMessage("xxx", "PluginWrapper", "tygrys");
+        UnityPlayer.UnitySendMessage("xxx", "PluginWrapper", tygrys);
         context = this;
     }
 }

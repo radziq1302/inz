@@ -28,7 +28,15 @@ public class autolog extends AppCompatActivity {
     }
     public void setLog(boolean zaloguj) {
         editor_shr.putBoolean("zalogowany", zaloguj);
+        //editor_shr.putInt
         editor_shr.commit(); ///////aply
     }
-
+    public void setRes(int zaloguj) {
+        editor_shr.putInt("zaformularzowany", zaloguj);
+        //editor_shr.putInt
+        editor_shr.commit(); ///////aply
+    }
+    public int sumOfQuestionnaire () {
+        return shr.getInt("zaformularzowany",-2);
+    }
 }
