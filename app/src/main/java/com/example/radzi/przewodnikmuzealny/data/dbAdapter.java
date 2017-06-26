@@ -60,12 +60,15 @@ public class dbAdapter {
         mDbHelper.close();
     }
 
-    public Cursor getTestData()
+    public Cursor getTestData(String kolumna)
     {
         try
         {
+
             //String sql ="SELECT * FROM myTable";
-            String sql ="SELECT * FROM items1";
+            //String kolumna = "nazwisko";
+            String sql ="SELECT " +kolumna+ " FROM items1";
+            //String sql ="SELECT * FROM items1";
             Cursor mCur = mDb.rawQuery(sql, null);
             if (mCur!=null)
             {

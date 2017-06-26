@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 public class loading extends Activity {
     autolog akcja;
+    boolean dupka = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +27,7 @@ public class loading extends Activity {
 
                     //jeżeli już ktoś zalogowany to do MainActivity a jesli nie to do log_in, może zmienna boolean po zapamiętaniu logowania Tickbox
                     //Intent intent = new Intent(getApplicationContext(),MainActivity.class);
-                    if (!akcja.zaloguj() )
+                    if (!akcja.zaloguj() && dupka == false)   //// usunac dupke
                     {   akcja.setLog(false);
                         Intent intent = new Intent(getApplicationContext(),log_in.class);
                         startActivity(intent);

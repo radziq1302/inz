@@ -19,6 +19,7 @@ public class java_singleton extends Application {
         public static Cursor cursor;
         public static SharedPreferences share;
         static boolean remember = false;
+        public static String[] autorki;
 
         public static java_singleton getInstance() {
             return singleton;

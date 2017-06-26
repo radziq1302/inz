@@ -2,6 +2,7 @@ package com.example.radzi.przewodnikmuzealny;
 
 import android.content.Context;
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -15,12 +16,18 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.radzi.przewodnikmuzealny.data.dbAdapter;
+
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class postLogExChoice extends AppCompatActivity implements mAdapter.listItemClickListener{
     private static final int NUM_LIST_ITEM = 100;
     private mAdapter madapter;
+    public static String [] opisLvl;
+    public String [] oAutorze;
+    Cursor oAutorach;
 
     private Toast toast;
     @Override
@@ -52,6 +59,36 @@ public class postLogExChoice extends AppCompatActivity implements mAdapter.listI
         Context context = getApplicationContext();
         Toast abd = Toast.makeText(context, "tunak"+ java_singleton.remember, Toast.LENGTH_SHORT);
         abd.show();
+        String poziom = "opis1";
+        if (java_singleton.summa <= 3)
+            poziom = "opis1";
+        if (java_singleton.summa > 3 &&java_singleton.summa <= 7 )
+            poziom = "opis2";
+        if (java_singleton.summa > 7)
+            poziom = "opis3";
+
+        dbAdapter mDbHelper = new dbAdapter(getApplicationContext());
+        mDbHelper.createDatabase();
+        mDbHelper.open();
+
+        Cursor testdata = mDbHelper.getTestData("autorInfo");
+
+        Cursor opisyLvl = mDbHelper.getTestData(poziom);
+        oAutorach = mDbHelper.getTestData("autorInfo");
+
+        mDbHelper.close();
+        /*String[] abs = new String[5];
+        abs[0] = testdata.getString(0);
+        testdata.moveToNext();
+        abs[1] = testdata.getString(0);
+        String kaput = testdata.getString(0);*/
+        String[] wud = wyniki(testdata);
+        opisLvl = wyniki(opisyLvl);
+        oAutorze = wyniki(oAutorach);
+        java_singleton.autorki = wyniki(oAutorach);
+        //java_singleton.autorki = wud;
+
+        Log.e("costam kolumny ktorejs", Arrays.toString(wud));
         //final TextView welcomeMessage = (TextView) findViewById(R.id.log_psw);
         //final Button log_btn = (Button) findViewById(R.id.btnLogin);
 
@@ -107,11 +144,18 @@ public class postLogExChoice extends AppCompatActivity implements mAdapter.listI
 
         }
 
-
-
-
     }
 
+    public String[] wyniki (Cursor crs) {
+        String[] abc = new String [crs.getCount()];
+        int licznik = 0;
+        crs.moveToFirst();
+        for (int i = 0; i<crs.getCount(); i++) {
+            abc[i] = crs.getString(0);
+            crs.moveToNext();
+        }
+        return abc;
+    }
     public class placowka {
         private String placowka_nazwa;
         private String placowka_klasa;
@@ -132,4 +176,5 @@ public class postLogExChoice extends AppCompatActivity implements mAdapter.listI
             return placowka_klasa;
         }
     }
+
 }

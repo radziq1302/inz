@@ -68,7 +68,7 @@ public class login extends AppCompatActivity {
                                     int age = jsonobj.getInt("age");
                                     int kwestionariusz = jsonobj.getInt("kwestionariusz");
 
-                                    if (kwestionariusz == 0) {
+                                    if (kwestionariusz == -1) {
                                         Intent intent = new Intent(login.this, kwestionariusz.class);
                                         //Intent intent = new Intent(login.this, kwestionariusz.class);
                                         intent.putExtra("name", name);

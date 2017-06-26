@@ -65,57 +65,59 @@ public class kwestionariusz extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                    Response.Listener<String> kwestionariusz_change_value = new Response.Listener<String>() {
+                Response.Listener<String> kwestionariusz_change_value = new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            JSONObject jsonobj = new JSONObject(response);
+                            boolean success = jsonobj.getBoolean("success");
+                            //if (success) {
+                            //jsonobj.put("kwestionariusz", 1);
 
-                        @Override
-                        public void onResponse(String response) {
-                            try {
-                                JSONObject jsonobj = new JSONObject(response);
-                                boolean success = jsonobj.getBoolean("success");
-                                //if (success) {
-                                //jsonobj.put("kwestionariusz", 1);
-
-                                //jsonobj.getInt("kwestionariusz");
-                               /* Intent intent = new Intent(kwestionariusz.this, log_in.class);
-                                startActivity(intent);*/
-                                Context context = getApplicationContext();
-                                Toast ab = Toast.makeText(context, "kwestionariusz wyslales", Toast.LENGTH_SHORT);
-                                ab.show();
-                                suma_pkt = q1+q2+q3;
-                                java_singleton.summa = q1+q2+q3;
+                            //jsonobj.getInt("kwestionariusz");
+                           /* Intent intent = new Intent(kwestionariusz.this, log_in.class);
+                            startActivity(intent);*/
+                            Context context = getApplicationContext();
+                            Toast ab = Toast.makeText(context, "kwestionariusz wyslales", Toast.LENGTH_SHORT);
+                            ab.show();
+                            /*suma_pkt = q1+q2+q3;
+                            java_singleton.summa = q1+q2+q3;
 
 
-                                Log.i("sumka", "wartosc = " + suma_pkt);
-                                Log.i("summa", "MM_wartosc = " + java_singleton.summa);
-                                akcja.setRes(java_singleton.summa);
-                                Intent intent = new Intent(kwestionariusz.this, postLogExChoice.class);
-                                //// tutaj dać summę
-                                intent.putExtra("suma punktow", suma_pkt);
-                                kwestionariusz.this.startActivity(intent);
+                            Log.i("sumka", "wartosc = " + suma_pkt);
+                            Log.i("summa", "MM_wartosc = " + java_singleton.summa);
+                            akcja.setRes(java_singleton.summa);*/
 
-                                //}
-                            } catch (JSONException e1) {
-                                e1.printStackTrace();
 
-                            }
+                            //}
+                        } catch (JSONException e1) {
+                            e1.printStackTrace();
+
                         }
+                    }
 
                     };
                 if (!("".equals(tmp1.getText().toString()))&&!("".equals(tmp2.getText().toString()))&&!("".equals(tmp3.getText().toString()))&&!("".equals(tmp4.getText().toString())) ){
-                    kwestionariuszChangeValue kwestionariuszRequest = new kwestionariuszChangeValue(username, password, java_singleton.summa, kwestionariusz_change_value);
-                    dbAdapter mDbHelper = new dbAdapter(getApplicationContext());
+                    suma_pkt = q1+q2+q3;
+                            java_singleton.summa = q1+q2+q3;
+
+
+                            Log.i("sumka", "wartosc = " + suma_pkt);
+                            Log.i("summa", "MM_wartosc = " + java_singleton.summa);
+                            akcja.setRes(java_singleton.summa);
+                    kwestionariuszChangeValue kwestionariuszRequest = new kwestionariuszChangeValue(username, password, suma_pkt, kwestionariusz_change_value);
+                    RequestQueue queue = Volley.newRequestQueue(kwestionariusz.this);
+                    queue.add(kwestionariuszRequest);
+                    /*dbAdapter mDbHelper = new dbAdapter(getApplicationContext());
                     mDbHelper.createDatabase();
                     mDbHelper.open();
 
                     Cursor testdata = mDbHelper.getTestData();
 
                     mDbHelper.close();
+                    testdata.getString(2);
                     String kaput = testdata.getColumnName(2);
-
-                    Log.e("costam kolumny ktorejs",kaput);
-
-                    RequestQueue queue = Volley.newRequestQueue(kwestionariusz.this);
-                    queue.add(kwestionariuszRequest);
+                    Log.e("costam kolumny ktorejs",kaput);*/
                 }
 
 
@@ -124,6 +126,10 @@ public class kwestionariusz extends AppCompatActivity {
                     Toast abc = Toast.makeText(context, "wypelnij wszystkie pola", Toast.LENGTH_SHORT);
                     abc.show();
                 }
+                Intent intent = new Intent(kwestionariusz.this, postLogExChoice.class);
+                //// tutaj dać summę
+                intent.putExtra("suma punktow", suma_pkt);
+                kwestionariusz.this.startActivity(intent);
             }
         });
         tmp1.setOnClickListener(new View.OnClickListener() {
