@@ -37,7 +37,7 @@ public class UnityExtended extends UnityPlayerActivity {
         mDbHelper.close();
         String [] opisLvl = wyniki(opisyLvl);
         String [] oAutorze = wyniki(oAutorach);
-        java_singleton.autorki = wyniki(oAutorach);
+        //java_singleton.autorki = wyniki(oAutorach);
         akcja = new autolog(this);
         Integer sum = akcja.sumOfQuestionnaire();
         //java_singleton.summa;
