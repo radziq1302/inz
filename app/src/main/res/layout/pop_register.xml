@@ -21,7 +21,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textEmailAddress"
-        android:hint="email prawdziwy"
+        android:hint="nazwisko"
 
         android:layout_below="@+id/register_login"
         android:layout_centerHorizontal="true" />
@@ -40,25 +40,14 @@
 
         />
 
-    <CheckBox
-        android:id="@+id/checkBox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-
-        android:text="CheckBox"
-        android:layout_marginTop="55dp"
-        android:layout_below="@+id/register_password"
-        android:layout_alignLeft="@+id/register_password"
-        android:layout_alignStart="@+id/register_password" />
-
     <Button
         android:id="@+id/btnRegister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/register_password"
-        android:layout_alignRight="@+id/register_password"
-        android:layout_below="@+id/checkBox"
-        android:text="Button" />
+        android:text="Button"
+        android:layout_below="@+id/register_age"
+        android:layout_alignEnd="@+id/register_age"
+        android:layout_marginTop="35dp" />
 
     <EditText
         android:id="@+id/register_age"
@@ -69,6 +58,6 @@
         android:layout_below="@+id/register_password"
         android:ems="10"
         android:inputType="textPersonName"
-        android:hint="age" />
+        android:hint="wiek" />
 
 </RelativeLayout>
