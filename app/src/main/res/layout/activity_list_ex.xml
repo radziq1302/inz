@@ -9,7 +9,7 @@
         android:id="@+id/ex_textview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#0ed7cd"
+        android:background="#6fc7b8"
         android:fontFamily="monospace"
         android:padding="16dp"
         android:textColor="#ff7b00"

@@ -42,6 +42,7 @@ public class UnityExtended extends UnityPlayerActivity {
         Integer sum = akcja.sumOfQuestionnaire();
         //java_singleton.summa;
         String tygrys = sum.toString();
+        String [] tygrys1 = oAutorze;
         tygrys = oAutorze[1];
         super.onCreate(savedInstanceState);
         String [] tygrys1 = oAutorze;
