@@ -2,7 +2,7 @@
     <string name="app_name">PrzewodnikMCHTR</string>
     <string name="welcome">Przewodnik muzealny</string>
     <string name="rules">Regulamin świadczenia usług</string>
-    <string name="login">login</string>
+    <string name="login">Zaloguj</string>
     <string name="register">Zarejestruj</string>
     <string name="send_register">Wyślij</string>
     <string name="signin">zaloguj</string>

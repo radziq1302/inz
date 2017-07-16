@@ -44,7 +44,7 @@ public class UnityExtended extends UnityPlayerActivity {
         String tygrys = sum.toString();
         tygrys = oAutorze[1];
         super.onCreate(savedInstanceState);
-        UnityPlayer.UnitySendMessage("xxx", "PluginWrapper", tygrys);
+        String [] tygrys1 = oAutorze;
         context = this;
     }
     public String[] wyniki (Cursor crs) {

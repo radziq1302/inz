@@ -3,8 +3,8 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">#ff0000</item>
-        <item name="colorPrimaryDark">#ff0000</item>
+        <item name="colorPrimary">#ff7b00</item>
+        <item name="colorPrimaryDark">#ff7b00</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:actionBarStyle">@style/MyActionBar</item>
 
@@ -12,10 +12,18 @@
 
     <style name="AppTheme1" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">#fff000</item>
-        <item name="colorPrimaryDark">#fff000</item>
+        <item name="colorPrimary">#ff7b00</item>
+        <item name="colorPrimaryDark">#ff7b00</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:actionBarStyle">@style/MyActionBar</item>
+
+    </style>
+    <style name="AppTheme3" parent="Theme.AppCompat">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">#ff7b00</item>
+        <item name="colorPrimaryDark">#ff7b00</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
 
     </style>
     <style name="NoActionBar" parent="@android:style/Theme.Holo.Light.NoActionBar">
@@ -23,8 +31,8 @@
 
         <item name="android:windowNoTitle">true</item>
     </style>
-    <style name="MyActionBar" parent="@android:style/Theme.Holo.Light">
-        <item name="android:background">#ff0ff0</item>
+    <style name="MyActionBar" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:background">#ff7b00</item>
     </style>
     <style name="popUpowy" >
         <item name="android:windowIsTranslucent">true</item>
@@ -33,4 +41,5 @@
 
         <item name="android:windowNoTitle">true</item>
     </style>
+
 </resources>
