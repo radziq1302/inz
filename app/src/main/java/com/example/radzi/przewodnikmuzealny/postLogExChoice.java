@@ -135,6 +135,7 @@ public class postLogExChoice extends AppCompatActivity implements mAdapter.listI
         String toastMessage = "Item #" + clickedItemIndex + " clcked.";
         toast = Toast.makeText(this, toastMessage, Toast.LENGTH_LONG);
         toast.show();
+
         String klasa;
         switch (clickedItemIndex) {
             case 0: {klasa="msn";             Intent intent = new Intent(postLogExChoice.this, UnityExtended.class);//com.mchtr.Przewodnix.UnityPlayerNativeActivity.class);//msn.class);
