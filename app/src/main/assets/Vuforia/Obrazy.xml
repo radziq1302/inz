@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
+  <Tracking>
+    <ImageTarget name="Syrena" size="35.000000 42.932098" />
+    <ImageTarget name="mp5016" size="35.000000 23.887501" />
+    <ImageTarget name="mermaid500szukalski" size="35.000000 47.880001" />
+    <ImageTarget name="ewa-juszkiewicz" size="50.000000 30.468750" />
+  </Tracking>
+</QCARConfig>
