@@ -18,12 +18,12 @@ public class postLog extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Intent intent = getIntent();
-        String name = intent.getStringExtra("name");
-        String username = intent.getStringExtra("username");
-        int age = intent.getIntExtra("age", -1);
+        String imie = intent.getStringExtra("imie");
+        String nazwisko = intent.getStringExtra("nazwisko");
+        int wiek = intent.getIntExtra("wiek", -1);
         int kwestionariusz = intent.getIntExtra("kwestionariusz", -1);
         //boolean newbe1 = (kwestionariusz != 0);
-        Log.v("wyswietl, no mi tu", Boolean.toString(newbe));
+        //Log.v("wyswietl, no mi tu", Boolean.toString(newbe));
         if (newbe)
         setContentView(R.layout.activity_post_log);
         else
@@ -41,12 +41,12 @@ public class postLog extends AppCompatActivity {
         int age = intent.getIntExtra("age", -1);
         int kwestionariusz = intent.getIntExtra("kwestionariusz", -1);*/
 
-        String message = name + " siemka zioomq";
+        String message = imie + " siemka zioomq";
         Context context = getApplicationContext();
         Toast ab = Toast.makeText(context, message,Toast.LENGTH_LONG);
-        ab.show();
-        log_login.setText(name);
-        log_pwd.setText(age+ "");
+        //ab.show();
+        log_login.setText(imie);
+        log_pwd.setText(wiek+ "");
         log_kwest.setText(kwestionariusz+"");
         //welcomeMessage.setText(message);
 

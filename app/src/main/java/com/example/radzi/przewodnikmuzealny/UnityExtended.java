@@ -24,7 +24,7 @@ public class UnityExtended extends UnityPlayerActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         //String DB_PATH = "/data/data/" + context.getPackageName() + "/" + "databases/items1.db";
-        Log.v("To jest wynik singleton",""+java_singleton.summa);
+        //Log.v("To jest wynik singleton",""+java_singleton.summa);
         dbAdapter mDbHelper = new dbAdapter(getApplicationContext());
         mDbHelper.createDatabase();
         mDbHelper.open();
@@ -49,7 +49,7 @@ public class UnityExtended extends UnityPlayerActivity {
             opisLvlFull = opisLvlFull + s + ";";
         }
         //java_singleton.autorki = wyniki(oAutorach);
-        Log.v("jeden String",opisLvlFull);
+       // Log.v("jeden String",opisLvlFull);
         akcja = new autolog(this);
         Integer sum = akcja.sumOfQuestionnaire();
         //java_singleton.summa;

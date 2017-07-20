@@ -15,10 +15,8 @@ import java.util.ArrayList;
  */
 
 public class mAdapter extends RecyclerView.Adapter<mAdapter.NumberViewHolder> {
-    private static final String TAG = mAdapter.class.getSimpleName();
 
-    private int mNumberItems; // ile widokow jest dozwolone
-    final private listItemClickListener mOnClickListener;
+    final private listItemClickListener onClickLstnr;
     private ArrayList<postLogExChoice.placowka> karmie_recyclerview = new ArrayList<>();
     public interface listItemClickListener {
         void onListItemClick (int clickedItemIndex);
@@ -26,15 +24,15 @@ public class mAdapter extends RecyclerView.Adapter<mAdapter.NumberViewHolder> {
 
     // konstruktor !!!!!!!!!!!!!!!!!!!!!!!!!!!
     public mAdapter (ArrayList<postLogExChoice.placowka> number, listItemClickListener listener){
-        //mNumberItems = number;
+
         karmie_recyclerview = number;
-        mOnClickListener = listener;
+        onClickLstnr = listener;
     }
     @Override
     public NumberViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
-        Context context = viewGroup.getContext();
+        Context con = viewGroup.getContext();
         int layoutIdForListItem = R.layout.activity_list_ex;
-        LayoutInflater inflater = LayoutInflater.from(context);
+        LayoutInflater inflater = LayoutInflater.from(con);
         boolean shouldAttachToParentImmediately = false;
         View view = inflater.inflate(layoutIdForListItem, viewGroup, shouldAttachToParentImmediately);
         NumberViewHolder viewHolder = new NumberViewHolder (view);
@@ -46,13 +44,11 @@ public class mAdapter extends RecyclerView.Adapter<mAdapter.NumberViewHolder> {
     public void onBindViewHolder(NumberViewHolder holder, int position) {
         postLogExChoice.placowka placowka = karmie_recyclerview.get(position);
         ((NumberViewHolder) holder).element_listy.setText(placowka.getNazwa());
-        //holder.bind(position);
     }
 
     @Override
     public int getItemCount() {
         return karmie_recyclerview.size();
-        //return mNumberItems;
     }
 
 
@@ -71,7 +67,7 @@ public class mAdapter extends RecyclerView.Adapter<mAdapter.NumberViewHolder> {
         @Override
         public void onClick(View v) {
             int clickedPosition = getAdapterPosition();
-            mOnClickListener.onListItemClick(clickedPosition);
+            onClickLstnr.onListItemClick(clickedPosition);
         }
     }
 }

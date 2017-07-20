@@ -57,8 +57,8 @@ public class postLogExChoice extends AppCompatActivity implements mAdapter.listI
         final EditText log_kwest = (EditText) findViewById(R.id.editText);
 
         Context context = getApplicationContext();
-        Toast abd = Toast.makeText(context, "tunak"+ java_singleton.remember, Toast.LENGTH_SHORT);
-        abd.show();
+/*        Toast abd = Toast.makeText(context, "tunak"+ java_singleton.remember, Toast.LENGTH_SHORT);
+        abd.show();*/
         String poziom = "opis1";
         if (java_singleton.summa <= 3)
             poziom = "opis1";
@@ -132,13 +132,11 @@ public class postLogExChoice extends AppCompatActivity implements mAdapter.listI
         if (toast!=null){
             toast.cancel();
         }
-        String toastMessage = "Item #" + clickedItemIndex + " clcked.";
-        toast = Toast.makeText(this, toastMessage, Toast.LENGTH_LONG);
-        toast.show();
+
 
         String klasa;
         switch (clickedItemIndex) {
-            case 0: {klasa="msn";             Intent intent = new Intent(postLogExChoice.this, UnityExtended.class);//com.mchtr.Przewodnix.UnityPlayerNativeActivity.class);//msn.class);
+            case 0: {klasa="msn";             Intent intent = new Intent(postLogExChoice.this, UnityExtended.class);//com.mchtr.Przewodnix.UnityPlayerNativeActivity.class);
                 postLogExChoice.this.startActivity(intent);}
            /* case 1: klasa="tbc";Intent intent2 = new Intent(postLogExChoice.this, tbc.class);
                 postLogExChoice.this.startActivity(intent2);*/

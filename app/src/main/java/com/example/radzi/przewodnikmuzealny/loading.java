@@ -32,12 +32,12 @@ public class loading extends Activity {
                         Intent intent = new Intent(getApplicationContext(),log_in.class);
                         startActivity(intent);
 
-                        Log.e ("tunaczek_false", "tunaczek "+ akcja.zaloguj());
+                        //Log.e ("tunaczek_false", "tunaczek "+ akcja.zaloguj());
 
                     }
                     else {
                         //if (login.remember1 ==true) {//(java_singleton.share.getBoolean("pamietacz",false)==true) {
-                            Log.e ("tunaczek_true", "tunaczek "+ akcja.zaloguj());
+                            //Log.e ("tunaczek_true", "tunaczek "+ akcja.zaloguj());
                             Intent intent_f = new Intent(getApplicationContext(), postLogExChoice.class);
                             startActivity(intent_f);
                         //}

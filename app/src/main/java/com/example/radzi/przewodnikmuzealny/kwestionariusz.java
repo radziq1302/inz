@@ -5,11 +5,9 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
-import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -18,9 +16,6 @@ import android.widget.Toast;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
-import com.example.radzi.przewodnikmuzealny.data.dbAdapter;
-import com.example.radzi.przewodnikmuzealny.data.dbContract;
-import com.example.radzi.przewodnikmuzealny.data.dbHelper;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -54,7 +49,7 @@ public class kwestionariusz extends AppCompatActivity {
         final Button kwest_btn = (Button) findViewById(R.id.btn_kwestionariusz);
 
         final String pierwszy = tmp1.getText().toString();
-        Log.i("bdxsmxxx", username);
+        //Log.i("bdxsmxxx", username);
 
         tmp1.setText("");
         tmp2.setText("");
@@ -78,8 +73,8 @@ public class kwestionariusz extends AppCompatActivity {
                            /* Intent intent = new Intent(kwestionariusz.this, log_in.class);
                             startActivity(intent);*/
                             Context context = getApplicationContext();
-                            Toast ab = Toast.makeText(context, "kwestionariusz wyslales", Toast.LENGTH_SHORT);
-                            ab.show();
+/*                            Toast ab = Toast.makeText(context, "kwestionariusz wyslales", Toast.LENGTH_SHORT);
+                            ab.show();*/
                             /*suma_pkt = q1+q2+q3;
                             java_singleton.summa = q1+q2+q3;
 
@@ -102,8 +97,8 @@ public class kwestionariusz extends AppCompatActivity {
                             java_singleton.summa = q1+q2+q3;
 
 
-                            Log.i("sumka", "wartosc = " + suma_pkt);
-                            Log.i("summa", "MM_wartosc = " + java_singleton.summa);
+                            //Log.i("sumka", "wartosc = " + suma_pkt);
+                            //Log.i("summa", "MM_wartosc = " + java_singleton.summa);
                             akcja.setRes(java_singleton.summa);
                     kwestionariuszChangeValue kwestionariuszRequest = new kwestionariuszChangeValue(username, password, suma_pkt, kwestionariusz_change_value);
                     RequestQueue queue = Volley.newRequestQueue(kwestionariusz.this);

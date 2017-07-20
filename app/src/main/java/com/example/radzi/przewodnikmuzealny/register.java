@@ -38,10 +38,10 @@ public class register extends AppCompatActivity {
         reg_btn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                final String name = reg_login.getText().toString();
-                final String username = reg_email.getText().toString();
-                final String password = reg_pwd.getText().toString();
-                final int age = Integer.parseInt(reg_age.getText().toString());
+                final String imie = reg_login.getText().toString();
+                final String nazwisko = reg_email.getText().toString();
+                final String haslo = reg_pwd.getText().toString();
+                final int wiek = Integer.parseInt(reg_age.getText().toString());
 
                 Response.Listener<String> responseListenerr = new Response.Listener<String>() {
                     @Override
@@ -54,7 +54,7 @@ public class register extends AppCompatActivity {
                                 startActivity(intent);
                                 Context context = getApplicationContext();
                                 Toast ab = Toast.makeText(context, "niezle, wyslales",Toast.LENGTH_SHORT);
-                                ab.show();
+                                //ab.show();
                             }
                         else {
                                 AlertDialog.Builder builder = new AlertDialog.Builder(register.this);
@@ -68,7 +68,7 @@ public class register extends AppCompatActivity {
                         }
                     }
                 };
-                RegisterReq registerRequest = new RegisterReq(name, username, age, password, responseListenerr);
+                RegisterReq registerRequest = new RegisterReq(imie, nazwisko, wiek, haslo, responseListenerr);
                 RequestQueue queue = Volley.newRequestQueue(register.this);
                 queue.add(registerRequest);
             }

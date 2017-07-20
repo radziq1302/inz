@@ -34,7 +34,7 @@ public class dbHelper extends SQLiteOpenHelper {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
         this.iContext = context;
         DB_PATH = "/data/data/" + context.getPackageName() + "/" + "databases/"; //context.getDatabasePath(DATABASE_NAME).getAbsolutePath() ;//
-        Log.e("Path 1", DB_PATH);
+        //Log.e("Path 1", DB_PATH);
     }
     public boolean openDataBase() throws SQLException {
         String mPath = DB_PATH + DATABASE_NAME;

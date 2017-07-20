@@ -28,7 +28,7 @@ import java.util.zip.Inflater;
 public class log_in extends AppCompatActivity  {
     View view;
     LayoutInflater Inflater;
-    FireMissilesDialogFragment.FireMissilesDialogListener mListener;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

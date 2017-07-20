@@ -78,8 +78,8 @@ public class login extends AppCompatActivity {
                                         login.this.startActivity(intent);
 
                                         Context context = getApplicationContext();
-                                        Toast ab = Toast.makeText(context, "niezle, wyslales", Toast.LENGTH_SHORT);
-                                        ab.show();
+                                        //Toast ab = Toast.makeText(context, "niezle, wyslales", Toast.LENGTH_SHORT);
+                                        //ab.show();
 
 
                                     } else {
@@ -92,7 +92,7 @@ public class login extends AppCompatActivity {
 
                                         Context context = getApplicationContext();
                                         Toast ab = Toast.makeText(context, "niezle, wyslales i masz kwestionariusz", Toast.LENGTH_SHORT);
-                                        ab.show();
+                                        //ab.show();
                                     }
                                     if (checkbox_rmb.isChecked()) {
                                         akcja.setLog(true);
@@ -112,14 +112,14 @@ public class login extends AppCompatActivity {
                                     editor_share.commit();*/
                                         Context context = getApplicationContext();
                                         Toast abd = Toast.makeText(context, "tuna" + akcja.zaloguj(), Toast.LENGTH_SHORT);
-                                        abd.show();
+                                        //abd.show();
                                     }
                                 } else {
-                                    AlertDialog.Builder builder = new AlertDialog.Builder(login.this);
-                                    builder.setMessage("nie udalo sie zalogowac")
-                                            .setNegativeButton("sprobuj", null)
-                                            .create()
-                                            .show();
+                                    AlertDialog.Builder alertbuilder = new AlertDialog.Builder(login.this);
+                                    alertbuilder.setMessage("nie udalo sie zalogowac");
+                                    alertbuilder.setNegativeButton("sprobuj", null);
+                                    alertbuilder.create();
+                                    alertbuilder.show();
                                 }
                             } catch (JSONException e) {
                                 e.printStackTrace();
