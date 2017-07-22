@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -24,7 +25,7 @@ import org.json.JSONObject;
  */
 
 public class register extends AppCompatActivity {
-
+    private long klikacz = 0;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +39,10 @@ public class register extends AppCompatActivity {
         reg_btn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
+                if (SystemClock.elapsedRealtime() - klikacz < 1000){
+                    return;
+                }
+                klikacz  = SystemClock.elapsedRealtime();
                 final String imie = reg_login.getText().toString();
                 final String nazwisko = reg_email.getText().toString();
                 final String haslo = reg_pwd.getText().toString();

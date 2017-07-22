@@ -15,23 +15,24 @@ import java.util.Map;
 
 
 public class LoginReq extends StringRequest {
+    private Map<String, String> parametry;
     private static final String log_req_url = "http://tomeczki.000webhostapp.com/Login.php";
-    private Map<String, String> params;
-    //RegisterReq (int id, String name, String surname, String password, int age, int education, String Login, Response.Listener<String> listener) {
-    LoginReq (String username,  String password, Response.Listener<String> listener) {
+
+    //RegisterReq (int id, String name, String surname, String haslo, int age, int education, String Login, Response.Listener<String> listener) {
+    LoginReq (String nazwisko,  String haslo, Response.Listener<String> listener) {
         super(Method.POST, log_req_url, listener, null);
-        params = new HashMap<>();
-        params.put("username", username);
+        parametry = new HashMap<>();
+        parametry.put("username", nazwisko);
 
-        params.put("password", password);
+        parametry.put("password", haslo);
 
-        //params.put("login", Login);
+        //parametry.put("login", Login);
 
     }
 
     @Override
     public Map<String, String> getParams() {
-        return params;
+        return parametry;
     }
 }
 

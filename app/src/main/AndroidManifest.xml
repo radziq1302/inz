@@ -29,6 +29,7 @@
 
         <activity
             android:name=".loading"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -38,18 +39,23 @@
         </activity>
         <activity
             android:name=".MainActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
         <activity
             android:name=".log_in"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
         <activity
             android:name=".register"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
         <activity
             android:name=".login"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
         <activity
             android:name=".settingsActivity"
+            android:screenOrientation="portrait"
             android:label="@string/setts"
             android:theme="@style/Theme.AppCompat.Light.DarkActionBar"
             android:parentActivityName=".postLogExChoice"
@@ -63,10 +69,10 @@
             android:theme="@style/AppTheme"
             ></activity>
         -->
-        <activity
-            android:name=".FireMissilesDialogFragment"
-            android:theme="@style/AppTheme" />
-        <activity android:name=".postLog" />
+
+        <activity android:name=".postLog"
+            android:screenOrientation="portrait"
+            />
         <activity android:label="@string/app_name" android:screenOrientation="landscape" android:launchMode="singleTask" android:process=":unityplayer" android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale|layoutDirection" android:name="com.mchtr.Przewodnix.UnityPlayerActivity">
             <meta-data android:name="unityplayer.UnityActivity" android:value="true" />
             <meta-data android:name="unityplayer.ForwardNativeEventsToDalvik" android:value="false" />
@@ -78,11 +84,11 @@
         <activity android:name="com.unity3d.player.VideoPlayer" android:label="@string/app_name" android:screenOrientation="landscape"  android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen">
         </activity>
 
-        <activity android:name=".kwestionariusz"></activity>
+        <activity android:name=".kwestionariusz"
+            android:screenOrientation="portrait"></activity>
         <activity android:name=".postLogExChoice"
-
+            android:screenOrientation="portrait"
             android:launchMode="singleTop"></activity>
-        <activity android:name=".msn"></activity>
         <activity android:name=".UnityExtended"
             android:label="@string/app_name" android:screenOrientation="landscape" android:launchMode="singleTask" android:process=":unityplayer" android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale|layoutDirection">
         <meta-data android:name="unityplayer.UnityActivity" android:value="true" />
@@ -91,6 +97,7 @@
             />
         <!--
                     To support devices using the TI S3D library for stereo mode we must
+                    To support devices using thed TI S3D library for stereo mode we must
                     add the following library.
                     Devices that require this are: ODG X6
                 -->

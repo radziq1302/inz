@@ -96,20 +96,6 @@ public class login extends AppCompatActivity {
                                     }
                                     if (checkbox_rmb.isChecked()) {
                                         akcja.setLog(true);
-/*                                    SharedPreferences shr = getSharedPreferences("login_data", MODE_PRIVATE);
-                                    SharedPreferences.Editor editor_share1 = shr.edit();
-                                    editor_share1.clear();
-                                    editor_share1.putString("login",username);
-                                    editor_share1.putString("password",password);
-                                    editor_share1.putBoolean("pamietacz", remember1=true);
-                                    editor_share1.commit();
-                                    java_singleton.share = getSharedPreferences("login_data", Context.MODE_PRIVATE);
-                                    SharedPreferences.Editor editor_share = java_singleton.share.edit();
-                                    editor_share.clear();
-                                    editor_share.putString("login",username);
-                                    editor_share.putString("password",password);
-                                    editor_share.putBoolean("pamietacz", java_singleton.remember=true);
-                                    editor_share.commit();*/
                                         Context context = getApplicationContext();
                                         Toast abd = Toast.makeText(context, "tuna" + akcja.zaloguj(), Toast.LENGTH_SHORT);
                                         //abd.show();
